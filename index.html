@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style.css">
+    <title>Movie.es</title>
+    <style>
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+    }
+    .header{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 95px 1fr;
+        grid-template-rows: 65px 1fr;
+        height: 100vh;
+        grid-template-areas:    "navbar navbar" 
+                                "menu contenido";
+                                
+                              
+    }
+    .navbar{
+        grid-area: navbar;
+        display: grid;
+        grid-template-columns: 1fr 700px 1fr;
+        justify-content: space-around;
+        align-items: center;
+        height: 65px;
+        -webkit-box-shadow: 0px 11px 22px -18px rgba(0,0,0,0.76);
+        -moz-box-shadow: 0px 11px 22px -18px rgba(0,0,0,0.76);
+         box-shadow: 0px 11px 22px -18px rgba(0,0,0,0.76);
+    }
+    .logo-nav{
+      height: inherit;
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+      
+    }
+    .search{
+        align-items: center;
+    }
+    .search input{
+      border-radius: 10px;
+      border:1px solid gray;
+      width: 400px;
+      padding: 7px;
+      outline: none;
+
+    }
+    .perfil{
+        display: flex;
+        align-items: center;
+    }
+   .menu{ 
+      grid-area: menu;
+      width: inherit;
+      margin: 0;
+      position: relative;
+      background-color: rgb(248, 85, 85);
+       
+   }
+  .menu ul li:nth-child(4){
+      position: absolute;
+      bottom: 0;
+  }
+   .menu ul li{
+    display: block;
+    width: 100%;
+    list-style: none;
+      
+   }
+   .contenido{
+       grid-area: contenido;
+       display: grid;
+       justify-content: center;
+       margin: 10px 0;
+   }
+   .menu ul li a{
+       display: block;
+       padding: 10px;
+       color:white;
+   }
+   .menu ul{
+       padding: 0px;
+       margin: 0;
+   }
+   .menu ul li{
+       display: block;
+   }
+   .menu ul li a span{
+       text-align: center;
+       display: block;
+       padding: 8px 0;
+       font-family: sans-serif;
+       font-weight: 500;
+   }
+  .menu ul li:hover{
+      
+  }
+  .logo-nav{
+    height: inherit;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+   
+   
+}
+.logo-nav img{
+     max-width: 270px;
+  
+  }
+  .search{
+      display: flex;
+      justify-content: flex-end;
+  }
+  .perfil{
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 10px;
+      
+  }
+  
+  .contenido .item{
+    display: grid;
+    grid-template-columns: repeat(3,300px);
+    grid-template-rows: 200px;
+    height: 200px;
+    column-gap: 65px;
+  }
+  .contenido div{
+      height: inherit;
+  }
+  .contenido img{
+    object-fit: cover;
+    width: 100%;
+    height: inherit;
+  }
+  .item .item-container .description{
+      position: absolute;
+      background-color: rgba(248, 85, 85,.76);
+      left: 0;
+      top: 50%;
+      height: 50%;
+      padding: 7px;
+      transition: top 600ms, height 600ms;
+      
+  }
+  .item .item-container{
+      position: relative;
+      font-size: 11px;
+      font-family: Arial, Helvetica, sans-serif;
+   
+      
+  }
+  .item .item-container .description h1{
+      margin: 10px 0;
+      font-size: 2.0em;
+      color: white;
+      margin-left: 5px;
+      font-weight: 700;
+     
+  }
+  .item .item-container .description p{
+      margin: 10px 0;
+      font-size: 1em;
+      color: white;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      
+  }
+  .item .item-container .description:hover{
+    height: 100%;
+    top: 0;
+   }
+   .item .item-container .description:hover p{
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+   }
+    </style>
+</head>
+<body>
+    <div class="header">
+    <header class="navbar">
+    <div class="logo-nav">
+        <img  src="../../images/logomovie.png">
+    </div>
+        <div class="search">
+            <input type="text" placeholder="Busca tu peli, actor, actriz o director favorito">
+        </div>
+        <div class="perfil">
+            <a>Bambi Rodriguez</a>
+        <img src="../../images/badge.png" width="40px">
+        </div>
+     
+    </header>
+ 
+    <div class="menu">
+        <ul class="listado">
+            <li>
+                
+                <a>
+                <span class="icon-menu"></span>
+                <span>
+                  Home
+                </span>
+                </a>
+
+             </li>
+            <li>
+                <a>
+                <span class="icon-menu"></span>
+                <span>
+                  Trending
+                </span>
+               </a>
+            </li>
+            <li>
+                <a>
+                <span class="icon-menu"></span>
+                <span>
+                  Mas Likes
+                </span>
+                </a>
+            </li>
+            <li>
+                <a>
+                <span class="icon-menu"></span>
+                <span>
+                  Ajustes
+                </span>
+                </a>
+            </li>
+        </ul>
+        
+     
+    </div>
+
+<section class="contenido">
+<h1>Ahora en el cine</h1>
+<div class="item">
+<div class="item-container">
+    <img src="../../images/desarrollo.jpg">
+<div class="description">
+    <h1>The Secret Live of Pets</h1>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+    </p>
+</div>
+</div>
+<div class="item-container">
+    <img src="../../images/desarrollo.jpg">
+<div class="description">
+    <h1>The Secret Live of Pets</h1>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+    </p>
+</div>
+</div>
+
+<div class="item-container">
+    <img src="../../images/desarrollo.jpg">
+<div class="description">
+    <h1>The Secret Live of Pets</h1>
+    <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+    </p>
+</div>
+</div>
+</div>
+<h1>Ahora en el cine</h1>
+<div class="item">
+    <div class="item-container">
+        <img src="../../images/desarrollo.jpg">
+    <div class="description">
+        <h1>The Secret Live of Pets</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+        </p>
+    </div>
+    </div>
+    <div class="item-container">
+        <img src="../../images/desarrollo.jpg">
+    <div class="description">
+        <h1>The Secret Live of Pets</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+        </p>
+    </div>
+    </div>
+    <div class="item-container">
+        <img src="../../images/desarrollo.jpg">
+    <div class="description">
+        <h1>The Secret Live of Pets</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+        </p>
+    </div>
+    </div>
+</div>
+<h1>Ahora en el cine</h1>
+<div class="item">
+    <div class="item-container">
+        <img src="../../images/desarrollo.jpg">
+    <div class="description">
+        <h1>The Secret Live of Pets</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+        </p>
+    </div>
+    </div>
+    <div class="item-container">
+        <img src="../../images/desarrollo.jpg">
+    <div class="description">
+        <h1>The Secret Live of Pets</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+        </p>
+    </div>
+    </div>
+    <div class="item-container">
+        <img src="../../images/desarrollo.jpg">
+    <div class="description">
+        <h1>The Secret Live of Pets</h1>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nam dolore, eligendi accusantium voluptatum excepturi corrupti iure suscipit eos illum modi impedit asperiores placeat aperiam. Cum ratione iste deleniti aliquam?
+        </p>
+    </div>
+    </div>
+</div>
+</section>
+</div>
+</body>
+</html>
