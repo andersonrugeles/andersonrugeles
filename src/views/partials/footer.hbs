@@ -1,0 +1,70 @@
+<footer class="footer">
+        <div class="container">
+            <div class="columns is-multiline">
+                <div class="column">
+                    <ul class="footer-ul">
+                        <li class="footer-item">
+                            <h3 class="has-text-weight-bold">Información</h3>
+                        </li>
+                        <li class="footer-item"><a class="footer-link" href="/index">La marca</a></li>
+                        <li class="footer-item"><a class="footer-link" href="#">Mapa del sitio</a></li>
+                    </ul>
+                </div>
+
+                
+                <div class="column">
+                    <ul class="footer-ul">
+                        
+                        <li class="footer-item">
+                            
+                            <h3 class="has-text-weight-bold">Tu cuenta</h3>
+                            
+                        </li>
+                      {{#if user}}
+                      {{else}}
+                        <li class="footer-item"><a class="footer-link" href="/iniciasesion/login">Iniciar sesión</a></li>
+                        <li class="footer-item"><a class="footer-link" href="/registros/registra">Registro</a></li>
+                       
+                        {{/if}}
+                        {{#if user}}
+                        <li class="footer-item"><a class="footer-link" href="/carrito">Ver carrito </a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul class="footer-ul">
+                        <li class="footer-item">
+                            <h3 class="has-text-weight-bold">Productos</h3>
+                        </li>
+                        <li class="footer-item"><a class="footer-link" href="/index">La marca</a></li>
+                        {{#if user}}
+                        <li class="footer-item"><a class="footer-link" href="/links/productos">Productos</a></li>
+                        {{/if}}
+                    </ul>
+                </div>
+                <div class="column">
+
+                    <ul class="footer-ul">
+                        <li class="footer-item">
+                            <h3 class="has-text-weight-bold">Datos de contacto</h3>
+                        </li>
+                        <li class="footer-item">+57 3132531933</a></li>
+                    </ul>
+                </div>
+                <div class="column is-full">
+                    <div class="footer-socials">
+                        <a class="footer-solcials-link" href="#"><i class="zmdi zmdi-facebook"></i></a>
+                        <a class="footer-solcials-link" href="#"><i class="zmdi zmdi-email"></i></a>
+                        <a class="footer-solcials-link" href="//wa.me/573132531933?text=Hola!%20Bienvenidos%20a%20tuReloj.com,%20¿en%20que%20te%20podemos%20colaborar?"><i class="zmdi zmdi-whatsapp"></i></a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bar-top">
+            <div class="container">
+                <a class="footer-bar-top-links" href="/index">2020 TuReloj</a>
+            </div>
+        </div>
+    </footer>
+    <script src="/static/js/main.js"></script>

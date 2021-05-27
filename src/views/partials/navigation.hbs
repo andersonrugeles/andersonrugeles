@@ -1,0 +1,104 @@
+    <header>
+        <nav class="navbar-top">
+            <ul class="navbar-top-ul">
+               {{#if user}}
+               {{else}}
+                <li class="navbar-top-item">
+                    <a href="/registros/registra"class="navbar-top-links" >Registro</a>
+                </li>
+                <li class="navbar-top-item">
+                    <a href="/iniciasesion/login" class="navbar-top-links">Iniciar sesión</a>
+                </li>
+                 {{/if}}
+            
+                {{#if user}}
+                <li class="navbar-top-item">
+                    <a href="/carrito" class="navbar-top-links">
+                        <i class="zmdi zmdi-shopping-cart" ></i> Carrito
+                        
+                        
+                    </a>
+                </li>
+               {{/if}} 
+            </ul>
+        </nav>
+        <nav class="navbar">
+            <header class="nabvar-mobile is-size-5-mobile">
+                <a class="navbar-mobile-link has-text-white" href="#" id="btn-mobile"><i class="zmdi zmdi-menu"></i></a>
+                <a class="navbar-mobile-link has-text-white" href="/index">TuReloj</a>
+                {{#if user}}
+                <a class="navbar-mobile-link has-text-white" href="#"><i class="zmdi zmdi-shopping-cart"></i> Vacio</a>
+                {{/if}}
+            </header>
+            <nav class="nav-menu" id="mySidenav">
+                <form class="form-group " action="#">
+                    <div class="form-group-container">
+                       
+                        <img src="/static/img/logo.png">
+                    </div>
+                </form>     
+                {{#if user}}
+                {{#if admin}}
+                      <li class="nav-menu-item"><a href="/index" class="nav-menu-link">HOLAAA</a></li>
+                      {{#if cliente}}
+                      <li class="nav-menu-item"><a href="/index" class="nav-menu-link">PERRA</a></li>
+                       {{/if}}
+                 {{/if}}
+                 {{/if}}
+          
+                <a class="is-hidden-mobile brand is-uppercase has-text-weight-bold has-text-dark" href="/index">TuReloj</a>
+                <ul class="nav-menu-ul">
+                  <li class="nav-menu-item"><a href="/index" class="nav-menu-link">La Marca</a></li>
+                  {{#if user}}
+                    <li class="nav-menu-item"><a href="/links/productos" class="nav-menu-link">Productos</a></li>
+                   
+                   {{else}}
+                    <li class="nav-menu-item"><a href="/registros/registra" class="nav-menu-link">Registro</a></li>
+                    <li class="nav-menu-item"><a href="/iniciasesion/login" class="nav-menu-link">Iniciar Sesión</a></li>
+                   {{/if}}
+                    {{#if user}}
+
+                   <li class="nav-menu-item" id="men">
+                        <a class="nav-menu-link link-submenu">{{user.username}}
+                            <img src="../../static/img/usuario.png"> 
+                            <i
+                        class="zmdi zmdi-chevron-down"></i>
+                        
+                        </a>
+                        <div class="container-sub-menu">
+                            <ul class="sub-menu-ul">
+                               
+                                         <li class="nav-menu-item">
+                                             
+                                             
+                                                    
+                                         <a class="nav-menu-link" href="/links/productos">Hacer una compra      
+                                         <img src="../../static/img/comprar.png"> 
+                                         </a>
+                                                                              
+                                        </li>
+                                        <li class="nav-menu-item"><a class="nav-menu-link" href="/carrito">Carrito de compra   
+                                        <img src="../../static/img/supermercado.png"> 
+                                        </a>
+                                       
+                                        </li>
+                                        <li class="nav-menu-item"><a class="nav-menu-link" href="/admin">Administrador   
+                                        <img src="../../static/img/admin1.png"> 
+                                        </a>
+
+
+                                        </li>
+                                        <li class="nav-menu-item"><a class="nav-menu-link" href="/cerrarsesion">Cerrar sesion
+                                        <img src="../../static/img/cerrar-sesion.png"> 
+                                        </a></li>
+                                                                          
+                             
+                                </ul>
+                          
+      
+                                    
+                    {{/if}}
+                </ul>
+            </nav>
+        </nav>
+    </header>

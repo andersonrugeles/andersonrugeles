@@ -1,0 +1,41 @@
+<div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1>Modificar Producto</h1>
+            </div>
+           
+            <div class="login-form">
+               
+              <form action="" target="" method="post">
+                {{#each producto_id}}
+                <div class="control-group">
+                <input type="text" class="login-field" required placeholder="Nombre" name="nombre" value="{{nombre}}" autofocus >
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+
+                <div class="control-group">
+                <input type="text" class="login-field" value="{{descripcion}}" placeholder="Descripcion" required name="descripcion">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+                
+                <div class="control-group">
+                <input  type="numeric"  required value="{{precio}}" name="precio" placeholder="Precio">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+              
+               
+                <div class="form-control-plaintext" >
+                <input type="file" value="{{url1}}" name="url1" accept=".jpg,.png" required>
+                </div>
+           
+                </div>
+                 {{/each}}
+                 <br>
+                <div class="control-group">
+              <button class="btn2 btn-primary btn2-large btn2-block" >
+               Modificar
+              </button>
+              </form>
+              </div>
+        </div>
+</div>

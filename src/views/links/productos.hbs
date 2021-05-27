@@ -1,0 +1,83 @@
+<div class="banner banner-second">      
+</div>
+{{#if success}}
+                <div class="container p-4">
+                 <div class="row">
+                      <div class="col-md-4 mx-auto">
+              <div class="alert alert-success alert-dismissible fade show" role="alert"> 
+              {{success}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+           </div>
+         </div>
+      </div>
+      {{/if}}
+{{#each muestra}}
+  {{#if message}}
+                <div class="container p-4">
+                 <div class="row">
+                      <div class="col-md-4 mx-auto">
+              <div class="alert alert-danger alert-dismissible fade show" role="alert"> 
+              {{message}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+           </div>
+         </div>
+      </div>
+      {{/if}}
+ <!-- relojes -->
+ <form action="productos/{{idproducto}}/{{nombre}}/{{precio}}" method="post">
+ 
+         <div class="container">
+        <div class="columns">
+            <div class="column is-two-fifths-desktop">
+                <div class="slider" id="slider">
+                    <img id="im" src="/static/img/{{url1}}">
+              </div>
+         </div>
+            <div class="column">
+                <h3 class="is-size-4" name="nombre" value="{{nombre}}">{{nombre}}</h3>
+                <h2 class="price is-size-4" name="precio" value="{{precio}}"><sup>$</sup>{{precio}}</h2>
+                <p class="has-text-grey" name="idproducto" value="{{idproducto}}"><strong>Código del producto: #</strong>{{idproducto}}</p>
+                <p class="text-default"name="descripcion">{{descripcion}}</p>
+                
+                    <div class="columns is-multiline">
+                       <!-- 
+                        <div class="column is-one-third">
+                            <label for="color">Color</label>
+                            <select class="form-control-field" id="{{idproducto}}" onChange="cambia(this.options[this.selectedIndex].value)">
+                                <option value="/static/img/{{url1}}">{{color1}}</option>
+                                <option value="/static/img/{{url2}}">{{color2}}</option>
+                                <option value="/static/img/{{url3}}">{{color3}}</option>
+                            </select>
+
+                        </div>
+                            -->
+                        <div class="column is-one-third">
+                            <label for="quality">Cantidad</label>
+                            <input class="form-control-field" type="number" min="1" pattern="^[0-9]+" max="50" name="cantidad" required autocomplete="off">
+                        </div>
+                        <div class="column is-full is-marginless">
+                            <button type="submit" class="btn btn-default btn-outline"><i class="zmdi zmdi-shopping-cart"></i>
+                                Agregar al carrito</button>
+                                
+                        </div>
+                    </div>
+
+              
+            </div>
+
+        </div>
+    </div>
+ </form>
+
+    {{/each}}
+
+    
+
+         
+

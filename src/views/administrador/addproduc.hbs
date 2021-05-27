@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+<div class="banner banner-second">      
+</div>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="/agrega">Agregar Productos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/agregaruser">Agregar Usuarios</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/listarp">Listar Productos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/listaru">Listar Usuarios</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/compras">Historial de Compras</a>
+  </li>
+  
+</ul>
+
+{{#if success}}
+                <div class="container p-4">
+                 <div class="row">
+                      <div class="col-md-4 mx-auto">
+              <div class="alert alert-success alert-dismissible fade show" role="alert"> 
+              {{success}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+           </div>
+         </div>
+      </div>
+      {{/if}}
+       <div class="login">
+        <div class="login-screen">
+            <div class="app-title">
+                <h1>Agrega Producto</h1>
+            </div>
+           
+            <div class="login-form">
+               
+              <form action="" target="" method="post">
+                <div class="control-group">
+                <input type="text" class="login-field" value="" required placeholder="Nombre" name="nombre"  autofocus >
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+
+                <div class="control-group">
+                <input type="text" class="login-field" value="" placeholder="Descripcion" required name="descripcion">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+                
+                <div class="control-group">
+                <input  type="numeric"  required name="precio" placeholder="Precio">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+              
+               
+                <div class="form-control-plaintext" >
+                <input type="file" name="url1" accept=".jpg,.png" required>
+                </div>
+           
+           <!-- 
+            <div class="control-group">
+            
+            <select class="selectpicker form-control" multiple  required id='testbox' name="color">
+            <option selected value="Negro">Negro</option>
+            <option value="Plateado">Plateado</option>
+            <option value="Dorado">Dorado</option>
+            <option value="Rosado">Rosado</option>
+            <option value="Blanco">Blanco</option>
+            <option value="Azul">Azul</option>
+            </select>
+        
+             <script type="text/javascript">
+              $(document).ready(function() {
+               var last_valid_selection = null;
+               $('#testbox').change(function(event) {
+               if ($(this).val().length > 3) {
+                alert('Solo debes seleccionar maximo 3 colores');
+               $(this).val(last_valid_selection);
+               } else {
+                last_valid_selection = $(this).val();
+        }
+      });
+    });
+               </script>
+               -->
+              </div>
+                 <br>
+                <div class="control-group">
+              <button class="btn2 btn-primary btn2-large btn2-block" >
+               Guardar
+              </button>
+                  </div>
+                  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+               
+                 
+            </div>
+        </div>
+    </div>
+    

@@ -1,0 +1,42 @@
+ <div class="login-screen">
+            <div class="app-title">
+                <h1>Modificar Usuario</h1>
+            </div>
+           
+            <div class="login-form">
+               
+              <form action="" target="" method="post">
+                     {{#each usuario_id}}
+                <div class="control-group">
+                <input type="text" class="login-field" value="{{nombre}}" required placeholder="Nombre" name="nombre" id="nombre"  autofocus >
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+
+                <div class="control-group">
+                <input type="text" class="login-field" value="{{username}}" placeholder="Usuario" required name="username">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+                
+                <div class="control-group">
+                <input  type="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required value="{{correo}}" name="correo" placeholder="Correo">
+                <label class="login-field-icon fui-user" for="login-name"></label>
+                </div>
+
+                               
+                 {{/each}}
+              <button class="btn2 btn-primary btn2-large btn2-block" >
+               Modificar
+              </button>
+              </form>
+               
+                <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+               
+                 
+              
+         
+            </div>
+        </div>
+    </div>
+    

@@ -1,0 +1,160 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<div class="banner banner-three">      
+</div>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" href="/agrega">Agregar Productos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/agregaruser">Agregar Usuarios</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/listarp">Listar Productos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/listaru">Listar Usuarios</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/compras">Historial de Compras</a>
+  </li>
+</ul>
+
+      <div class="col-xs-6">
+         {{#if success}}
+                <div class="container p-4">
+                 <div class="row">
+                      <div class="col-md-4 mx-auto">
+              <div class="alert alert-success alert-dismissible fade show" role="alert"> 
+              {{success}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+           </div>
+         </div>
+      </div>
+      {{/if}}
+<table class="table">
+  <h1>Usuarios</h1>
+  <thead>
+    <tr>
+      <th scope="col">idcliente</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Usuario</th>
+      <th scope="col">Correo</th>
+      </tr>
+  </thead>
+  <tbody>
+      {{#each muestrausers}}
+    <tr>
+      <th scope="row">{{idcliente}}</th>
+      <td> {{nombre}}</td>
+      <td>  {{username}}</td>
+      <td> {{correo}}</td>
+       
+        <td>
+         <!-- Modal Modificar-->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modificarUsuario{{idcliente}}">
+       Modificar
+      </button>
+      
+       <!-- Modal -->
+<div class="modal fade" id="modificarUsuario{{idcliente}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form action='/modificar_usuario/{{idcliente}}' method="post">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+        <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
+            </div>
+            <input type="text" class="form-control" 
+              aria-label="Sizing example input" name="nombre" value="{{nombre}}" aria-describedby="inputGroup-sizing-sm">
+            </div>              
+
+
+            <div class="input-group input-group-sm mb-3">
+               <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Username</span>
+               </div>
+            <input type="text" class="form-control" 
+              aria-label="Sizing example input" name="username" value="{{username}}" aria-describedby="inputGroup-sizing-sm">
+            </div>      
+         
+            <div class="input-group input-group-sm mb-3">
+               <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Correo</span>
+               </div>
+            <input type="text" class="form-control" 
+              aria-label="Sizing example input" name="correo" value="{{correo}}" aria-describedby="inputGroup-sizing-sm">
+            </div> 
+         </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+
+<!-- Modal Eliminar-->
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#eliminarUsuario{{idcliente}}">
+       Eliminar
+      </button>
+      
+       <!-- Modal -->
+          <div class="modal fade" id="eliminarUsuario{{idcliente}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <form action="delete-usuario/{{idcliente}}" method="post">
+                <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+          <div class="modal-body">
+                      
+      
+          <label> Deseas eliminar este usuario?</label>
+      
+      
+
+    </div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+  <button type="submit" class="btn btn-danger">Eliminar</button>
+     </div>
+      </div>
+       </div>
+</div>
+</form>
+ </td>
+ </tr>
+
+  </tbody>
+    {{/each}}
+</table>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+

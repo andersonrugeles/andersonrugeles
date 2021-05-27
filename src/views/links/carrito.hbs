@@ -1,0 +1,100 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<div class="banner banner-second">      
+</div>
+
+<div class="container">
+{{#if success}}
+                <div class="container p-4">
+                 <div class="row">
+                      <div class="col-md-4 mx-auto">
+              <div class="alert alert-success alert-dismissible fade show" role="alert"> 
+              {{success}}
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+           </div>
+         </div>
+      </div>
+      {{/if}}
+      <table class="table table-hover">
+      <h1>Carrito de Compras</h1>
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Producto</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Precio (Unidad)</th>
+      <th scope="col">Total</th>
+      <th scope="col"></th>
+      </tr>
+  </thead>
+  <tbody>
+      {{#each muestra}}
+       
+    <tr>
+      <td>{{nombre}}</td>
+      <td>{{cantidad}}</td>
+      <td>{{precio}}</td>
+      <td>{{totales}}</td>
+      <td> 
+               <!-- Modal Eliminar-->
+      <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#eliminarProducto{{idcarrito}}">
+       Eliminar
+      </button>
+      
+       <!-- Modal -->
+          <div class="modal fade" id="eliminarProducto{{idcarrito}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <form action="delete-carrito/{{idcarrito}}" method="post">
+                <div class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                     </button>
+                  </div>
+          <div class="modal-body">
+                      
+      
+          <label> Deseas eliminar este producto del carrito de compras?</label>
+      
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+  <button type="submit" class="btn btn-danger">Eliminar</button>
+     </div>
+      </div>
+       </div>
+</div>
+</form>
+    </td>
+    </tr>
+  </tbody>
+  {{/each}}
+  
+  <tbody>
+          
+    <tr>
+    
+      <td><b>Total</b></td>
+      <td><b>{{cantidad}}</b></td>
+      <td><b>{{precioUnidad}}</b></td>
+      <td><b>{{totalCompra}}</b></td>
+      <td>
+      <form method="post" action="/comprar">
+      <button type="submit" class="btn btn-success">
+       Comprar
+      </button>
+      </form>
+      
+      
+      
+      
+      </td>
+    </tr>
+  </tbody>
+  
+      </table>
+</div>
+
